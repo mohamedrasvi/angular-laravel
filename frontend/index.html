@@ -25,24 +25,24 @@
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
            <!--  <h3>it´s a Form</h3> -->
-                <form>
+                <form ng-controller="usersController">
                     <div class="input-group">
                         <span class="input-group-addon glyphicon glyphicon-user" aria-hidden="true"></span>
-                        <input type="text" class="form-control" name="inputName" placeholder="Nome">
+                        <input type="text" class="form-control" ng-model="name" placeholder="Nome">
                         
                     </div>
                     <br/>
                     <div class="input-group">
                         <span class="input-group-addon glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                        <input type="email" class="form-control" name="inputEmail" placeholder="Email">
+                        <input type="email" class="form-control" ng-model="email" placeholder="Email">
                     </div>
                     <br/>
                     <div class="input-group">
                         <span class="input-group-addon glyphicon glyphicon-earphone" aria-hidden="true"></span>
-                        <input type="text" class="form-control" name="inputTel" placeholder="Telefone">
+                        <input type="text" class="form-control" ng-model="telefone" placeholder="Telefone">
                     </div>
                     <br/>
-                    <button type="submit" class="btn btn-warning btn-lg pull-right">Cadastrar</button>
+                    <button type="submit" class="btn btn-warning btn-lg pull-right" ng-click="userPost()">Cadastrar</button>
                 </form>
             </div>
         </div>
@@ -51,8 +51,6 @@
 
           <div class="row">
           <div class="panel panel-default">
-            <div class="panel-heading">Clientes</div>
-            <button type="btn btn-default" ng-click="getAllUsers()">Botao</button>
 
           <table class="table">
             
@@ -64,10 +62,10 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Hermes</td>
-                <td>hdmartins.ufabc@gmail.com</td>
-                <td>11947386606</td>
+              <tr ng-repeat="user in users">
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.telefone}}</td>
               </tr>
             </tbody>
           </table>
@@ -85,6 +83,7 @@
     </script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/controllers.js"></script>
 </body>
 
 </html>
