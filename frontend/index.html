@@ -16,9 +16,10 @@
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
 </head>
 
-<body>
+<body ng-app="myApp">
     <div class="container">
         <!-- Example row of columns -->
         <div class="row">
@@ -28,6 +29,7 @@
                     <div class="input-group">
                         <span class="input-group-addon glyphicon glyphicon-user" aria-hidden="true"></span>
                         <input type="text" class="form-control" name="inputName" placeholder="Nome">
+                        
                     </div>
                     <br/>
                     <div class="input-group">
@@ -45,11 +47,12 @@
             </div>
         </div>
 
-        <div class="table-wrapper">
+        <div class="table-wrapper" ng-controller="usersController">
 
           <div class="row">
           <div class="panel panel-default">
             <div class="panel-heading">Clientes</div>
+            <button type="btn btn-default" ng-click="getAllUsers()">Botao</button>
 
           <table class="table">
             
@@ -76,7 +79,7 @@
         
     </div>
     <!-- /container -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
     window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')
     </script>
