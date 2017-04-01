@@ -20,13 +20,11 @@
 </head>
 
 <body ng-app="myApp">
-    <div class="container">
-        <!-- Example row of columns -->
-        <div class="row"  ng-controller="usersController">
+    <div class="container" ng-controller="usersController">
+        <div class="row" >
             
             <div class="col-md-4 col-md-offset-4">
-           <!--  <h3>it´s a Form</h3> -->
-                <form ng-submit="saveUser()">
+                <form ng-submit="storeUser()">
                     <div class="input-group">
                         <span class="input-group-addon glyphicon glyphicon-user" aria-hidden="true"></span>
                         <input type="text" class="form-control" ng-model="name" placeholder="Nome">
@@ -47,12 +45,12 @@
                 </form>
 
             </div>
-            <div class="col-md-4" ng-repeat="error in postResponse.errors">
-                <div class="alert alert-danger" role="alert" ng-if="postResponse">{{error}}</div>
+            <div class="col-md-4" ng-repeat="error in storeUserResponse.errors">
+                <div class="alert alert-danger" role="alert" ng-if="storeUserResponse">{{error}}</div>
             </div>
         </div>
 
-        <div class="table-wrapper" ng-controller="usersController">
+        <div class="table-wrapper">
 
           <div class="row">
           <div class="panel panel-default">
@@ -74,7 +72,7 @@
                 <td>{{user.telefone}}</td>
                 <td>
                     <button class="btn btn-info">Editar</button>
-                    <button class="btn btn-danger">Deletar</button>
+                    <button class="btn btn-danger" ng-click="destroyUser(user.id)">Deletar</button>
                 </td>
               </tr>
             </tbody>
