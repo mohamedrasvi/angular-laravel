@@ -32,6 +32,32 @@ app.controller('usersController', function($scope, $http){
 		});
 	};
 
+	$scope.showUser = function(id){
+		$http.get('http://crud.dev/api/users/' + id).then(function(response){
+			$scope.showName = response.data.name;
+			$scope.showEmail = response.data.email;
+			$scope.showTelefone = response.data.telefone;
+			$scope.showId = response.data.id;
+		});
+	};
+
+	$scope.updateUser = function(id){
+		var dataObj = {
+			name: $scope.showName,
+			email: $scope.showEmail,
+			telefone: $scope.showTelefone
+		}
+
+		$http.put('http://crud.dev/api/users/' + id, dataObj).then(function(response){
+			if(response.data.message){
+				$scope.updateUserResponse = response.data;
+			} else {
+				$('#myModal').modal('hide');
+				$scope.fetchAllUsers();
+			}
+		});
+	};
+
 	$scope.destroyUser = function(id){
 		$http.delete('http://crud.dev/api/users/' + id).then(function(response){
 			$scope.destroyUserResponse = response.data;

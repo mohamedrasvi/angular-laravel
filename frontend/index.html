@@ -21,14 +21,12 @@
 
 <body ng-app="myApp">
     <div class="container" ng-controller="usersController">
-        <div class="row" >
-            
+        <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <form ng-submit="storeUser()">
                     <div class="input-group">
                         <span class="input-group-addon glyphicon glyphicon-user" aria-hidden="true"></span>
                         <input type="text" class="form-control" ng-model="name" placeholder="Nome">
-                        
                     </div>
                     <br/>
                     <div class="input-group">
@@ -43,46 +41,67 @@
                     <br/>
                     <button type="submit" class="btn btn-warning btn-lg pull-right">Cadastrar</button>
                 </form>
-
             </div>
             <div class="col-md-4" ng-repeat="error in storeUserResponse.errors">
                 <div class="alert alert-danger" role="alert" ng-if="storeUserResponse">{{error}}</div>
             </div>
         </div>
-
         <div class="table-wrapper">
-
-          <div class="row">
-          <div class="panel panel-default">
-
-          <table class="table">
-            
-            <thead>
-              <tr>
-                <th>Nome</th>
-                <th>Email</th>
-                <th>Telefone</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr ng-repeat="user in users">
-                <td>{{user.name}}</td>
-                <td>{{user.email}}</td>
-                <td>{{user.telefone}}</td>
-                <td>
-                    <button class="btn btn-info">Editar</button>
-                    <button class="btn btn-danger" ng-click="destroyUser(user.id)">Deletar</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-            
-          </div>
-          </div>
-          
+            <div class="row">
+                <div class="panel panel-default">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>Telefone</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="user in users">
+                                <td>{{user.name}}</td>
+                                <td>{{user.email}}</td>
+                                <td>{{user.telefone}}</td>
+                                <td>
+                                    <button class="btn btn-info" data-toggle="modal" data-target="#myModal" ng-click="showUser(user.id)">Editar</button>
+                                    <button class="btn btn-danger" ng-click="destroyUser(user.id)">Deletar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-        
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <form>
+                            <div class="input-group">
+                                <span class="input-group-addon glyphicon glyphicon-user" aria-hidden="true"></span>
+                                <input type="text" class="form-control" ng-model="showName" placeholder="Nome">
+                            </div>
+                            <br/>
+                            <div class="input-group">
+                                <span class="input-group-addon glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                                <input type="email" class="form-control" ng-model="showEmail" placeholder="Email">
+                            </div>
+                            <br/>
+                            <div class="input-group">
+                                <span class="input-group-addon glyphicon glyphicon-earphone" aria-hidden="true"></span>
+                                <input type="text" class="form-control" ng-model="showTelefone" placeholder="Telefone">
+                            </div>
+                            <br/>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" ng-click="updateUser(showId)">Salvar alterações</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- /container -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
