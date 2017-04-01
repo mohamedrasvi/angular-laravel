@@ -22,10 +22,11 @@
 <body ng-app="myApp">
     <div class="container">
         <!-- Example row of columns -->
-        <div class="row">
+        <div class="row"  ng-controller="usersController">
+            
             <div class="col-md-4 col-md-offset-4">
            <!--  <h3>it´s a Form</h3> -->
-                <form ng-controller="usersController">
+                <form ng-submit="saveUser()">
                     <div class="input-group">
                         <span class="input-group-addon glyphicon glyphicon-user" aria-hidden="true"></span>
                         <input type="text" class="form-control" ng-model="name" placeholder="Nome">
@@ -42,8 +43,12 @@
                         <input type="text" class="form-control" ng-model="telefone" placeholder="Telefone">
                     </div>
                     <br/>
-                    <button type="submit" class="btn btn-warning btn-lg pull-right" ng-click="userPost()">Cadastrar</button>
+                    <button type="submit" class="btn btn-warning btn-lg pull-right">Cadastrar</button>
                 </form>
+
+            </div>
+            <div class="col-md-4" ng-repeat="error in postResponse.errors">
+                <div class="alert alert-danger" role="alert" ng-if="postResponse">{{error}}</div>
             </div>
         </div>
 
@@ -59,6 +64,7 @@
                 <th>Nome</th>
                 <th>Email</th>
                 <th>Telefone</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -66,6 +72,10 @@
                 <td>{{user.name}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.telefone}}</td>
+                <td>
+                    <button class="btn btn-info">Editar</button>
+                    <button class="btn btn-danger">Deletar</button>
+                </td>
               </tr>
             </tbody>
           </table>

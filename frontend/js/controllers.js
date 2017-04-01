@@ -7,7 +7,7 @@ app.controller('usersController', function($scope, $http){
 	});
 
 
-	$scope.userPost = function(){
+	$scope.saveUser = function(){
 
 		var dataObj = {
 			name: $scope.name,
@@ -16,10 +16,8 @@ app.controller('usersController', function($scope, $http){
 		}
 
 		$http.post('http://crud.dev/api/users', dataObj).then(function(response){
-			console.log("sucesso" + response);
-			}.error(function(response){
-				console.log("falhou" + response);
-			}));
+			$scope.postResponse = response.data;
+		});
 	};
 
 });
