@@ -3,13 +3,21 @@
 # Instalação
 
 * git clone https://github.com/HermesMartins/crud-laravel-5.4-angularjs-1.6.3.git nomedoprojeto
-* cd nomedoprojeto
+
+# Configurando o backend
+
+* cd nomedoprojeto/backend
 * composer install
-* crie uma database e configure o arquivo .env
+* crie uma database e configure o arquivo .env.example (ao final, renomeie para .env) 
 * php artisan key:generate
 * php artisan migrate
 * php artisan db:seed
 * php artisan serve
+
+# Configurando o frontend
+
+* abra o arquivo index.html no seu browser, se tudo foi configurado corretamente, devemos ver a tela principal com 10 usuários =]
+
 
 # Tela Inicial 
 
