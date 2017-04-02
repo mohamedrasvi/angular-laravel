@@ -3,7 +3,7 @@ var app = angular.module('myApp', []);
 app.controller('usersController', function($scope, $http){
 
 	$scope.fetchAllUsers = function(){
-		$http.get('http://crud.dev/api/users').then(function(response){
+		$http.get('http://localhost:8000/api/users').then(function(response){
 			$scope.users = response.data;
 		});
 	};
@@ -18,7 +18,7 @@ app.controller('usersController', function($scope, $http){
 			telefone: $scope.telefone
 		}
 
-		$http.post('http://crud.dev/api/users', dataObj).then(function(response){
+		$http.post('http://localhost:8000/api/users', dataObj).then(function(response){
 			if(response.data.message){
 				$scope.storeUserResponse = response.data;
 			} else {
@@ -33,7 +33,7 @@ app.controller('usersController', function($scope, $http){
 	};
 
 	$scope.showUser = function(id){
-		$http.get('http://crud.dev/api/users/' + id).then(function(response){
+		$http.get('http://localhost:8000/api/users/' + id).then(function(response){
 			$scope.showName = response.data.name;
 			$scope.showEmail = response.data.email;
 			$scope.showTelefone = response.data.telefone;
@@ -48,7 +48,7 @@ app.controller('usersController', function($scope, $http){
 			telefone: $scope.showTelefone
 		}
 
-		$http.put('http://crud.dev/api/users/' + id, dataObj).then(function(response){
+		$http.put('http://localhost:8000/api/users/' + id, dataObj).then(function(response){
 			if(response.data.message){
 				$scope.updateUserResponse = response.data;
 			} else {
@@ -59,7 +59,7 @@ app.controller('usersController', function($scope, $http){
 	};
 
 	$scope.destroyUser = function(id){
-		$http.delete('http://crud.dev/api/users/' + id).then(function(response){
+		$http.delete('http://localhost:8000/api/users/' + id).then(function(response){
 			$scope.destroyUserResponse = response.data;
 			console.log(response.data);
 			$scope.fetchAllUsers();
