@@ -8,7 +8,8 @@
 
 * cd nomedoprojeto/backend
 * composer install
-* crie uma database e configure o arquivo .env.example (ao final, renomeie para .env) 
+* cp .env.example .env
+* configurar o arquivo .env
 * php artisan key:generate
 * php artisan migrate
 * php artisan db:seed
