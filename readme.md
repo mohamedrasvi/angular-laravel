@@ -14,6 +14,9 @@
 * php artisan key:generate
 * php artisan migrate
 * php artisan serve
+* if you are using a vertual host or differnet then (http://localhost:8000) this URL then please replace with your own URL on  (/frontend/js/controllers.js) file for restful api get|post|put|delete methods 
+
+
 
 # configuration frontend
 
