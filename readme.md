@@ -1,4 +1,4 @@
-# CRUD  Laravel 5.4 and Angular 1.6.3
+# CRUD  Laravel and Angular
 
 # Installation Guide
 
