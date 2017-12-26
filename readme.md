@@ -26,8 +26,8 @@
 
 # angular-laravel CRUD system 
 
-<img src="https://cloud.githubusercontent.com/assets/14934318/24580975/efb71420-16e8-11e7-889b-14d3cee32790.jpg" alt="home">
+<img src="https://preview.ibb.co/gfQdwb/Screenshot_from_2017_12_26_20_18_59.png" alt="home">
 
 # Restful route list 
 
-<img src="https://cloud.githubusercontent.com/assets/14934318/24581041/271e6eda-16ea-11e7-83f7-01192e919073.PNG" alt="route:list">
+<img src="https://preview.ibb.co/dzmU2G/Screenshot_from_2017_12_26_20_22_12.png" alt="route:list">
