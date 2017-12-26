@@ -1,6 +1,6 @@
-# CRUD com Laravel 5.4 e Angular 1.6.3
+# CRUD  Laravel 5.4 and Angular 1.6.3
 
-# Instalação
+# Installation Guide
 
 * git clone git@github.com:mohamedrasvi/angular-laravel.git 
 
