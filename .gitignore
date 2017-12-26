@@ -1,0 +1,8 @@
+
+/backend/storage/*.key
+/backend/vendor
+/.settings
+/.buildpath
+/.project
+
+/backend/.env

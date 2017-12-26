@@ -2,12 +2,12 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class User extends Authenticatable
+class User extends Model
 {
-    use Notifiable;
+	use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -15,7 +15,16 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'telefone',
+        'name', 'cpf','email', 'date_of_birth','age',
+    	
     ];
+    
+    protected $dates = ['deleted_at'];
+    
+    public function setcpfAttribute($cpf)
+    {
+    	$this->attributes['cpf'] = str_replace(array('.', '-'),'',$cpf);
+    	 
+    }
 
 }

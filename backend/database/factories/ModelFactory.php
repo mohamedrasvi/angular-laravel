@@ -19,6 +19,8 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
-        'telefone' => $faker->cellphoneNumber,
+        'cpf' => $faker->cpf,
+    	'date_of_birth' => $faker->date_of_birth,
+    	'age' => $faker->age,
     ];
 });
