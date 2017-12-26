@@ -26,7 +26,7 @@
 
 # angular-laravel CRUD system 
 
-<img src="https://preview.ibb.co/gfQdwb/Screenshot_from_2017_12_26_20_18_59.png" alt="home">
+<img src="https://preview.ibb.co/cboqbb/scree.png" alt="home">
 
 # Restful route list 
 
