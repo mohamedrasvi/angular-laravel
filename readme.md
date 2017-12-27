@@ -19,8 +19,7 @@
 
 
 # configuration frontend
-
-* url 
+ 
 * open the /frontend/index.html file in your browser, if everything has been set up correctly, we should see the main screen
 
 
